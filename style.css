@@ -8,13 +8,244 @@
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   height: 100%;
 
-  --font-color: rgb(38,38,38);
-  --background-color: rgb(245, 245, 245);
+  --font-color: rgb(38, 38, 38);
+  --background-color: rgb(250, 250, 250);
+  --form-background: rgb(255, 255, 255);
+  --border-color: #cccccc;
+  --user-text-color: #888888;
+  --button-color: rgba(178, 223, 252, 255);
+  --create-account: rgb(0, 149, 246);
 }
 
 body {
-  font-size: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 14px;
   line-height: 1.125rem;
   background-color: var(--background-color);
   height: 100%;
+}
+
+main,
+article {
+  display: flex;
+  width: 100%;
+}
+
+main article {
+  align-items: center;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
+  padding: 5rem 0;
+  height: fit-content;
+}
+
+main article div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#smartphone {
+  /* background-color: tomato; */
+}
+
+.login-section {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--form-background);
+}
+
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: min-content;
+  user-select: none;
+}
+
+#login .logo {
+  margin-top: 2.6rem;
+  margin-bottom: 2.3rem;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.login > div {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.login .user-credential {
+  margin-bottom: 0.48rem;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
+  height: 2.8rem;
+  padding: 0 0.5rem;
+  color: var(--user-text-color);
+  border-radius: 0.25rem;
+  background-color: var(--background-color);
+  font-size: 12px;
+}
+
+.user-credential label,
+.user-credential input {
+  width: 100%;
+}
+
+.user-credential input {
+  padding: 0 0.5rem;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  line-height: 1.5rem;
+  outline: none;
+}
+
+.login .login-button {
+  user-select: none;
+  background-color: var(--button-color);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.6rem 0;
+  line-height: inherit;
+  border-radius: 0.3rem;
+  margin: 0.6rem 0 0.3rem 0;
+}
+
+.division {
+  color: #888888;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem 0 0.3rem 0;
+  user-select: none;
+}
+
+.division hr {
+  border-top: 1px solid #cccccc;
+  flex-grow: 1;
+}
+
+.division hr:first-child {
+  margin-right: 1.3rem;
+}
+
+.division hr:last-child {
+  margin-left: 1.3rem;
+}
+
+.facebook {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--form-background);
+  justify-content: center;
+  align-items: center;
+  height: 4.5rem;
+  color: rgba(56, 81, 133, 255);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.facebook img {
+  width: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.facebook span {
+  padding-top: 0.3rem;
+}
+
+.login a {
+  color: rgba(56, 81, 133, 255);
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 1.7rem;
+  font-size: small;
+}
+
+#register {
+  margin: 0.8rem 0;
+  padding: 1.5rem 0;
+}
+
+#register p a {
+  text-decoration: none;
+  color: var(--create-account);
+  font-weight: 600;
+}
+
+#get-app {
+  display: flex;
+  flex-direction: column;
+}
+
+#get-app p {
+  text-align: center;
+  font-size: 14px;
+  padding: 1rem 0;
+}
+
+.app-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 0.8rem;
+}
+
+.app-options a {
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+.app-options img {
+  width: 9.9rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #888888;
+  font-size: 12px;
+  padding: 2.3rem 0;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+footer div {
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+footer div:last-child {
+  margin-top: 0.3rem;
+}
+
+footer div:last-child select {
+  margin: 0 1rem;
+  background-color: transparent;
+  color: inherit;
+  width: 7.7rem;
 }
