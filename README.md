@@ -9,7 +9,8 @@ O objetivo desse desafio é criar uma cópia da tela de login utilizada pelo [In
 
 ### Projeto finalizado (temporariamente)
 > Ainda há varios pontos de melhorias a serem feitas lo layout do projeto.<br />
-> Devido a complexidade um pouco elevada, este projeto fica marcado para reformulação.
+> Devido a complexidade um pouco elevada, este projeto fica marcado para reformulação.<br />
+> Não foi possível implementar algumas das funcionalidades visuais por não utilizar JavaScript.
 
 ### Observações
 - A versão da tela de login utilizada neste projeto é referente a vigente na data **30/04/2022**.
