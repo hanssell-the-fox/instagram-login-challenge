@@ -20,11 +20,12 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   font-size: 14px;
   line-height: 1.125rem;
   background-color: var(--background-color);
   height: 100%;
+  overflow-y: scroll;
 }
 
 main,
@@ -33,13 +34,17 @@ article {
   width: 100%;
 }
 
+main {
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
 main article {
   align-items: center;
   justify-content: center;
   align-items: stretch;
   flex-direction: row;
-  padding: 5rem 0;
-  height: fit-content;
 }
 
 main article div {
@@ -49,7 +54,37 @@ main article div {
 }
 
 #smartphone {
-  /* background-color: tomato; */
+  position: relative;
+}
+
+@keyframes circle-t {
+  0% {
+    background-image: url('./src/img/img-1.png');
+  }
+
+  45% {
+    background-image: url('./src/img/img-3.png');
+  }
+
+  75% {
+    background-image: url('./src/img/img-3.png');
+  }
+
+  100% {
+    background-image: url('./src/img/img-4.png');
+  }
+}
+
+.photo {
+  position: absolute;
+  top: 25px;
+  right: 60px;
+  width: 248px;
+  height: 540px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  animation: circle-t 10s infinite linear;
 }
 
 .login-section {
@@ -61,16 +96,18 @@ main article div {
 }
 
 #login {
+  position: relative;
+  left: -0.8rem;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  width: min-content;
   user-select: none;
+  padding: 1rem 0;
 }
 
 #login .logo {
-  margin-top: 2.6rem;
-  margin-bottom: 2.3rem;
+  width: 60%;
+  margin: 3rem 0;
 }
 
 .login {
@@ -80,20 +117,21 @@ main article div {
 }
 
 .login > div {
-  width: 20rem;
+  min-width: 20rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 
 .login .user-credential {
-  margin-bottom: 0.48rem;
+  margin-bottom: 0.4rem;
   border: 1px solid var(--border-color);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   position: relative;
-  height: 2.8rem;
+  height: 2.7rem;
   padding: 0 0.5rem;
   color: var(--user-text-color);
   border-radius: 0.25rem;
@@ -107,7 +145,7 @@ main article div {
 }
 
 .user-credential input {
-  padding: 0 0.5rem;
+  padding: 0 0.6rem;
   background-color: transparent;
   position: absolute;
   left: 0;
@@ -117,12 +155,11 @@ main article div {
 }
 
 .login .login-button {
-  user-select: none;
   background-color: var(--button-color);
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  padding: 0.6rem 0;
+  padding: 0.5rem 0;
   line-height: inherit;
   border-radius: 0.3rem;
   margin: 0.6rem 0 0.3rem 0;
@@ -132,7 +169,6 @@ main article div {
   color: #888888;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   margin: 1rem 0 0.3rem 0;
   user-select: none;
 }
@@ -156,7 +192,7 @@ main article div {
   background-color: var(--form-background);
   justify-content: center;
   align-items: center;
-  height: 4.5rem;
+  height: 4rem;
   color: rgba(56, 81, 133, 255);
   font-size: 12px;
   font-weight: 600;
@@ -164,19 +200,19 @@ main article div {
 }
 
 .facebook img {
-  width: 1.2rem;
+  width: 1.1rem;
   margin-right: 0.5rem;
 }
 
 .facebook span {
-  padding-top: 0.3rem;
+  padding-top: 0.05rem;
 }
 
 .login a {
   color: rgba(56, 81, 133, 255);
   text-decoration: none;
   text-align: center;
-  margin-bottom: 1.7rem;
+  margin-bottom: 1.5rem;
   font-size: small;
 }
 
@@ -199,7 +235,7 @@ main article div {
 #get-app p {
   text-align: center;
   font-size: 14px;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
 }
 
 .app-options {
@@ -225,13 +261,13 @@ footer {
   justify-content: center;
   color: #888888;
   font-size: 12px;
-  padding: 2.3rem 0;
+  padding-bottom: 3.5rem;
 }
 
 footer a {
   color: inherit;
   text-decoration: none;
-  margin: 0 0.5rem;
+  margin: 0 0.6rem;
 }
 
 footer div {
@@ -248,4 +284,52 @@ footer div:last-child select {
   background-color: transparent;
   color: inherit;
   width: 7.7rem;
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    justify-content: space-between;
+  }
+
+  #smartphone {
+    display: none;
+  }
+
+  #login {
+    left: 0;
+  }
+
+  .login-section {
+    border: none;
+    background-color: transparent;
+  }
+
+  .facebook {
+    background-color: transparent;
+  }
+
+  #register {
+    margin: 3.5rem 0;
+  }
+
+  footer {
+    margin: 3.2rem 0;
+    padding: 0;
+  }
+
+  footer div {
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 0 0.7rem;
+    margin: 0;
+  }
+
+  footer div:last-child {
+    margin-top: 1rem;
+  }
+
+  footer div a {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
 }
